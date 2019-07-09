@@ -1,0 +1,23 @@
+<a href="{% url 'home' %}">home</a>
+<a href="{% url 'signup' %}">Signup</a>
+
+<div>
+    <h1>Login</h1>
+    {{Msg}}
+    {{error}}
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+               <td>Username:</td>
+                <td><input maxlength="15" name="u_id" type="text"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input name="u_pw" type="password"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Login">
+
+    </form>
+</div>

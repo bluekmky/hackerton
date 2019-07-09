@@ -1,0 +1,16 @@
+<h2>Home</h2>
+{% if data.is_authenticated%}
+<h2>회원 로그인 관련정보</h2>
+<ul>
+    {% for key,value in data.items %}
+    <li>{{key}} : {{value}}</li>
+    {% endfor %}
+    <a href="{% url 'logout' %}">로그아웃</a>    
+</ul>
+{% else %}
+    <h2>로그인 하세요</h2>
+    로그인 상태 : {{data.is_authenticated}}<br>
+    사용자 아이디 : {{data.username}}<br> 
+    <a href="{% url 'login' %}">로그인</a>
+    <a href="{% url 'signup' %}">회원가입</a>
+{% endif %}

@@ -1,0 +1,15 @@
+<h2><a href="{% url 'login' %}">Login</a></h2>
+
+<div>
+    <h1>Sign up</h1>
+    {{Msg}}
+    {{u_id}}
+    <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+<!-- form.as_table 은  폼을 table형식으로, form.as_p 는 폼을 p형식으로 출력 -->
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Sign up">
+    </form>
+</div>
